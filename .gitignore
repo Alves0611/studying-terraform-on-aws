@@ -38,3 +38,5 @@ plan.tfout
 08-serverless-app/dist/
 
 .env
+
+.terraform.lock.hcl
