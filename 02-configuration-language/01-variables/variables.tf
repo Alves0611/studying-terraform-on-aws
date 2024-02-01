@@ -9,3 +9,22 @@ variable "aws_profile" {
   description = "The AWS profile to use to authenticate with Terraform. Use 'default' in case you have only one account configured"
   default     = "studying"
 }
+
+variable "read_capacity" {
+  type = number
+  description = ""
+  default = 5
+}
+
+variable "write_capacity" {
+  type = number
+  description = ""
+  default = 5
+}
+
+
+variable "deletion_protection" {
+  type = bool
+  description = ""
+  default = false
+}
