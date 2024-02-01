@@ -10,21 +10,50 @@ variable "aws_profile" {
   default     = "studying"
 }
 
-variable "read_capacity" {
-  type = number
+
+
+variable "dynamodb_field_list" {
+  type        = list(string)
   description = ""
-  default = 5
+  default     = ["Userid", "GameTitle"]
 }
 
-variable "write_capacity" {
-  type = number
+variable "database_config" {
+  type = object({
+    table_name          = string
+    read_capacity       = optional(number, 3)
+    write_capacity      = optional(number, 3)
+    deletion_protection = optional(bool, false)
+    hash_key = object({
+      name = string
+      type = string
+    })
+    range_key = object({
+      name = string
+      type = string
+    })
+  })
   description = ""
-  default = 5
+  default = {
+    table_name = "GameScores"
+    hash_key = {
+      name = "UserId"
+      type = "S"
+    }
+    range_key = {
+      name = "GameTitle"
+      type = "S"
+    }
+  }
 }
 
 
-variable "deletion_protection" {
-  type = bool
+
+variable "tags" {
+  type        = map(string)
   description = ""
-  default = false
+  default = {
+    "Project" = "Studying"
+
+  }
 }
