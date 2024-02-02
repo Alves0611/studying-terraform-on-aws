@@ -67,3 +67,10 @@ variable "tags" {
 
   }
 }
+
+
+variable "service_name" {
+  type = string
+  description = ""
+  default = "game_store_service"
+}
