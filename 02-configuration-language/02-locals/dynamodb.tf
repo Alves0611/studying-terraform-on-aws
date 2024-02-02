@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "games" {
-  name                        = var.database_config.table_name
+  name                        = local.namespaced_service_name
   billing_mode                = "PROVISIONED"
   read_capacity               = var.database_config.read_capacity
   write_capacity              = var.database_config.write_capacity
@@ -18,8 +18,5 @@ resource "aws_dynamodb_table" "games" {
     type = var.database_config.range_key.type
   }
 
-  tags = merge(var.tags, {
-    "Fields" = join("_", var.dynamodb_field_list)
-  })
 }
 
