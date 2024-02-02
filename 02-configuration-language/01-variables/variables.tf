@@ -1,3 +1,8 @@
+variable "environment" {
+  type        = string
+  description = ""
+}
+
 variable "aws_region" {
   type        = string
   description = "The region to deploy the infra to"
