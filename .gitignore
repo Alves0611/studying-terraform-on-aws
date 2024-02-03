@@ -40,3 +40,5 @@ plan.tfout
 .env
 
 .terraform.lock.hcl
+
+.terraform.tfstate.lock.info
