@@ -1,0 +1,5 @@
+bucket         = "tfstate-891377404175"
+key            = "dev/backend-file/terraform.tfstate"
+region         = "us-east-1"
+profile        = "studying"
+dynamodb_table = "tflock-tfstate-891377404175"
